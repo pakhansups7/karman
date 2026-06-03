@@ -1,0 +1,1 @@
+export type Category = 'food' | 'transport' | 'health' | 'other';

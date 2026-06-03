@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    color: #111827;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+.app {
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 24px;
+}
+
+.app-title {
+    margin: 0 0 24px;
+    text-align: center;
+    font-size: 36px;
+}
+
+.expense-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.form-field,
+.category-filter {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.form-field:focus,
+.category-filter:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.button-primary {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.button-secondary {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+.expense-summary {
+    padding: 16px 20px;
+    margin: 0 0 16px;
+    background: #ffffff;
+    border-radius: 14px;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.category-filter {
+    margin-bottom: 20px;
+}
+
+.expense-list {
+    display: grid;
+    gap: 12px;
+}
+
+.expense-list-title {
+    margin: 0 0 4px;
+    font-size: 24px;
+}
+
+.expense-card {
+    padding: 18px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.expense-card h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+
+.expense-card p {
+    margin: 6px 0;
+}
+
+.expense-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.empty-state {
+    padding: 20px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 16px;
+    color: #6b7280;
+}
+
+@media (max-width: 640px) {
+    .app {
+        margin: 20px auto;
+        padding: 16px;
+    }
+
+    .expense-form {
+        grid-template-columns: 1fr;
+    }
+
+    .app-title {
+        font-size: 30px;
+    }
+}
