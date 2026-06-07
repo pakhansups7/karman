@@ -37,7 +37,7 @@ function App() {
         const newExpense: Expense = {
             id: crypto.randomUUID(),
             title: formData.title,
-            amount: formData.amount,
+            amount: Number(formData.amount),
             category: formData.category,
             date: formData.date,
         };
@@ -74,7 +74,7 @@ function App() {
                 return {
                     id: expense.id,
                     title: formData.title,
-                    amount: formData.amount,
+                    amount: Number(formData.amount),
                     category,
                     date: formData.date,
                 };

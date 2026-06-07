@@ -5,7 +5,7 @@ import type { Expense } from "../types/expense";
 
 export type ExpenseFormData = {
     title: string;
-    amount: number;
+    amount: string;
     category: Category | '';
     date: string;
 };
@@ -19,7 +19,7 @@ type ExpenseFormProps = {
 
 const emptyFormData: ExpenseFormData = {
     title: '',
-    amount: 0,
+    amount: '',
     category: '',
     date: '',
 };
@@ -33,7 +33,7 @@ export function ExpenseForm ({ onAddExpense, onUpdateExpense, onCancelEdit, edit
         }
         setFormData({
             title: editingExpense.title,
-            amount: editingExpense.amount,
+            amount: String(editingExpense.amount),
             category: editingExpense.category,
             date: editingExpense.date,
         });
@@ -44,7 +44,7 @@ export function ExpenseForm ({ onAddExpense, onUpdateExpense, onCancelEdit, edit
 
         if (
             formData.title.trim() === '' ||
-            formData.amount <= 0 ||
+            Number(formData.amount) <= 0 ||
             formData.category.trim() === '' ||
             formData.date.trim() === ''
         ) {
@@ -63,11 +63,9 @@ export function ExpenseForm ({ onAddExpense, onUpdateExpense, onCancelEdit, edit
     function handleChange(event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
         const { name, value } = event.target;
 
-        const newValue = name === 'amount' ? Number(value) : value;
-
         setFormData((prevForm) => ({
             ...prevForm,
-            [name]: newValue,
+            [name]: value,
         }));
     }
 
